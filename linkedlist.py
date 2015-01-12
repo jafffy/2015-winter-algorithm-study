@@ -37,7 +37,13 @@ class List:
         
         idx.next = None
 
-    def push_back(self, data): # Null check가 필요함
+    def push_back(self, data):
+        if self.head == None:
+            self.head = Node()
+            self.head.data = data
+            self.head.next = None
+            return
+
         idx = self.head
 
         while idx.next != None:
@@ -48,16 +54,12 @@ class List:
         newNode.next = None
         idx.next = newNode
         
-    def print_all(self): # Null check가 필요함
+    def print_all(self):         
         idx = self.head
 
-        while idx.next != None:
+        while idx != None:
             print idx.data
             idx = idx.next
 
 l = List()
 
-for i in range(1, 10):
-    l.push_back(i)
-
-l.print_all()
