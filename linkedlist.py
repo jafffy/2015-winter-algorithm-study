@@ -34,8 +34,8 @@ class List:
 
         while idx.next != target and idx.next != None:
             idx = idx.next    
-        
-        idx.next = None
+ 
+        idx.next = idx.next.next
 
     def push_back(self, data):
         if self.head == None:
@@ -63,3 +63,12 @@ class List:
 
 l = List()
 
+for i in range(10):
+    l.push_back(i)
+
+l.print_all()
+
+l.pop(l.head)
+l.pop(l.head.next.next.next)
+
+l.print_all()
