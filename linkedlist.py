@@ -34,3 +34,30 @@ class List:
 
         while idx.next != target and idx.next != None:
             idx = idx.next    
+        
+        idx.next = None
+
+    def push_back(self, data): # Null check가 필요함
+        idx = self.head
+
+        while idx.next != None:
+            idx = idx.next
+
+        newNode = Node()
+        newNode.data = data
+        newNode.next = None
+        idx.next = newNode
+        
+    def print_all(self): # Null check가 필요함
+        idx = self.head
+
+        while idx.next != None:
+            print idx.data
+            idx = idx.next
+
+l = List()
+
+for i in range(1, 10):
+    l.push_back(i)
+
+l.print_all()
