@@ -82,3 +82,7 @@ void List::pop_back()
 
     remove(head);
 }
+
+void List::clear()
+{
+}

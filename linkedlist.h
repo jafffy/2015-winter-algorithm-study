@@ -35,6 +35,8 @@ public:
 
     void pop_front();
     void pop_back();
+
+    void clear();
 };
 
 #endif // LINKEDLIST_H_
